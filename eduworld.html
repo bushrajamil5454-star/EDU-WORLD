@@ -1,31 +1,125 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduWorld - Courses</title>
+    <title>EduWorld - Home</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f7ff;
+        }
 
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f5f7ff;
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0b2545;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #c4b5fd;
+        }
+
+        /* Banner */
+        .banner {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("learn.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 30px 50px;
 }
+        .content {
+            max-width: 550px;
+        }
 
+        .content h1 {
+            color: white;
+            font-size: 38px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            color: #e2e8f0;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn-started {
+            background-color: #7c3aed;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-started:hover {
+            background-color: #5b21b6;
+        }
+
+        /* Welcome Section */
+        #about {
+            padding: 30px 25px;
+            text-align: center;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        #about h2 {
+            color: #173d75;
+        }
+
+        /* Courses Section */
         .courses {
             display: flex;
-            gap: 15px;
-            padding: 20px;
+            gap: 20px;
+            padding: 25px;
         }
 
         .course-card {
             flex: 1;
-            padding: 15px;
+            padding: 20px;
             border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
             background-color: white;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
 
         .web {
@@ -40,19 +134,19 @@
             background-color: #e5f8ee;
         }
 
-        .icon {
-            font-size: 30px;
+        .course-icon {
+            font-size: 32px;
         }
 
         .course-card h3 {
             color: #173d75;
-            font-size: 18px;
+            font-size: 19px;
         }
 
         .course-card p {
             color: #555;
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .course-card a {
@@ -65,54 +159,272 @@
             text-decoration: underline;
         }
 
-      
+        /* Mountain Quote Section */
+        .quote {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+                url("mountain.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-.quote {
-    background-image: url("mountain.png");
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
+        .quote h2 {
+            color: white;
+            font-size: 30px;
+            line-height: 1.5;
+            text-shadow: 2px 2px 5px black;
+        }
 
-    min-height: 200px;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+        /* Footer with Quick Links */
+        .footer {
+            background-color: #0b2545;
+            color: white;
+            padding: 35px 25px 15px;
+        }
 
-}
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 35px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
+        .footer-about,
+        .quick-links {
+            flex: 1;
+        }
+
+        .footer h3 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            color: #dbeafe;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* Quick Links */
+        .quick-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 15px;
+        }
+
+        .quick-links a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #bfdbfe;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .quick-links a:hover {
+            color: white;
+        }
+
+        .quick-icon {
+            width: 28px;
+            text-align: center;
+            font-size: 21px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #36506f;
+            margin-top: 25px;
+            padding-top: 15px;
+            font-size: 13px;
+            color: #dbeafe;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .banner {
+                padding: 35px 25px;
+            }
+
+            .content h1 {
+                font-size: 30px;
+            }
+
+            .courses {
+                flex-direction: column;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .quote h2 {
+                font-size: 25px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <section class="courses">
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">&#128366; EduWorld</div>
 
-        <div class="course-card web">
-            <div class="icon">💻</div>
-            <h3>Web Technologies</h3>
-            <p>Learn HTML, CSS and JavaScript.</p>
-            <a href="#">Learn More »</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Banner -->
+        <section class="banner" id="home">
+            <div class="content">
+                <h1>Your Learning <br>Journey Starts Here</h1>
+
+                <p>
+                    Access courses, resources and guidance
+                    to achieve your goals.
+                </p>
+
+                <button class="btn-started"
+                    onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+                    Get Started
+                </button>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <h2>Welcome to EduWorld</h2>
+            <p>
+                Explore educational resources, develop new skills,
+                and discover courses that help you achieve your goals.
+            </p>
+        </section>
+
+        <!-- Web, Database and Python Courses -->
+        <section class="courses" id="courses">
+
+            <div class="course-card web">
+                <div class="course-icon">💻</div>
+                <h3>Web Technologies</h3>
+                <p>Learn HTML, CSS and JavaScript.</p>
+                <a href="#">Learn More &raquo;</a>
+            </div>
+
+            <div class="course-card database">
+                <div class="course-icon">🗄️</div>
+                <h3>Database Systems</h3>
+                <p>Work with real-world databases.</p>
+                <a href="#">Learn More &raquo;</a>
+            </div>
+
+            <div class="course-card python">
+                <div class="course-icon">🐍</div>
+                <h3>Python Programming</h3>
+                <p>Build logic and solve problems.</p>
+                <a href="#">Learn More &raquo;</a>
+            </div>
+
+        </section>
+
+        <!-- Quote with Mountain Background -->
+        <section class="quote">
+            <h2>
+                "Small steps every day<br>
+                lead to big results."
+            </h2>
+        </section>
+
+    </main>
+
+    <!-- Footer and Quick Links -->
+    <footer class="footer" id="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+                <h3>EduWorld</h3>
+                <p>
+                    Your learning journey starts here.
+                    Discover courses, build skills, and
+                    take the next step toward your goals.
+                </p>
+            </div>
+
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li>
+                        <a href="#home">
+                            <span class="quick-icon">&#127968;</span>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about">
+                            <span class="quick-icon">&#8505;</span>
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#courses">
+                            <span class="quick-icon">&#128214;</span>
+                            Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:info@eduworld.example">
+                            <span class="quick-icon">&#9993;</span>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="course-card database">
-            <div class="icon">🗄️</div>
-            <h3>Database Systems</h3>
-            <p>Work with real-world databases.</p>
-            <a href="#">Learn More »</a>
+        <div class="copyright">
+            &copy; 2026 EduWorld. All rights reserved.
         </div>
 
-        <div class="course-card python">
-            <div class="icon">🐍</div>
-            <h3>Python Programming</h3>
-            <p>Build logic and solve problems.</p>
-            <a href="#">Learn More »</a>
-        </div>
-
-    </section>
-
-    <section class="quote">
-        <h2>"Small steps every day<br>lead to big results."</h2>
-    </section>
+    </footer>
 
 </body>
 </html>
+```
